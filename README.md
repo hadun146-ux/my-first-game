@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EvoX.io - Windy Gm</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #333; }
+        canvas { display: block; background: #222; }
+        #ui { position: absolute; top: 10px; left: 10px; color: white; font-family: sans-serif; }
+    </style>
+</head>
+<body>
+    <div id="ui">
+        <h2>Windy Gm - EvoX</h2>
+        <p id="lvlTag">Level: 1</p>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let player = { x: canvas.width/2, y: canvas.height/2, r: 25, xp: 0, lvl: 1, color: '#00d2ff' };
+    let mouse = { x: canvas.width/2, y: canvas.height/2 };
+
+    window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    function draw() {
+        // Vẽ nền xám đậm để dễ nhìn
+        ctx.fillStyle = '#1a1a1a';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Di chuyển nhân vật mượt mà
+        player.x += (mouse.x - player.x) * 0.1;
+        player.y += (mouse.y - player.y) * 0.1;
+
+        // Vẽ kiếm (màu trắng cho nổi)
+        let angle = Math.atan2(mouse.y - player.y, mouse.x - player.x);
+        ctx.save();
+        ctx.translate(player.x, player.y);
+        ctx.rotate(angle);
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(player.r, -4, 40, 8); 
+        ctx.restore();
+
+        // Vẽ nhân vật (hình tròn xanh)
+        ctx.beginPath();
+        ctx.arc(player.x, player.y, player.r, 0, Math.PI * 2);
+        ctx.fillStyle = player.color;
+        ctx.fill();
+        ctx.strokeStyle = "white";
+        ctx.stroke();
+
+        requestAnimationFrame(draw);
+    }
+    draw();
+</script>
+</body>
+</html>
