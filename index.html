@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EvoX.io - Windy Gm Project</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #000; font-family: sans-serif; }
+        canvas { display: block; }
+        #ui { position: absolute; top: 10px; left: 10px; color: white; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <div id="ui">
+        <h2 id="nameTag">Windy Gm - EvoX</h2>
+        <p id="lvlTag">Level: 1</p>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let player = {
+        x: canvas.width / 2,
+        y: canvas.height / 2,
+        r: 20,
+        xp: 0,
+        lvl: 1,
+        color: '#00d2ff'
+    };
+
+    let dots = [];
+    function createDots() {
+        if (dots.length < 100) {
+            dots.push({
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mèo Rượt Vàng + Quiz - Windy Gm Project</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #87CEEB; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        canvas { display: block; }
+        #ui { position: absolute; top: 10px; left: 10px; color: white; text-shadow: 2px 2px 4px #000; pointer-events: none; }
+        #score { font-size: 24px; font-weight: bold; }
+
+        /* Style cho bảng câu hỏi Quiz */
+        #quiz-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none; /* Ẩn lúc đầu */
+            flex-direction: column; align-items: center; justify-content: center;
+            color: white; z-index: 10;
+        }
+        .quiz-box {
+            background: #fff; color: #333; padding: 30px; border-radius: 15px;
+            text-align: center; box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            max-width: 400px;
+        }
+        .answer-btn {
+            display: block; width: 100%; padding: 10px; margin: 10px 0;
+            background: #2ecc71; color: white; border: none; border-radius: 5px;
+            font-size: 18px; cursor: pointer; transition: background 0.2s;
+        }
+        .answer-btn:hover { background: #27ae60; }
+        .answer-btn.wrong { background: #e74c3c; }
+    </style>
+</head>
+<body>
+
+    <div id="ui">
+        <div>Windy Gm presents</div>
+        <div id="score">Vàng: 0</div>
+    </div>
+
+    <div id="quiz-overlay">
+        <div class="quiz-box">
+            <h2 style="color: #e74c3c">BẠN ĐÃ VA CHẠM!</h2>
+            <p id="question-text">Câu hỏi: 1 + 1 bằng mấy?</p>
+            <button class="answer-btn" onclick="checkAnswer(1)">A. 1</button>
+            <button class="answer-btn" onclick="checkAnswer(2)">B. 2 (Đúng)</button>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mèo Rượt Vàng + Quiz - Windy Gm Project</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #87CEEB; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        canvas { display: block; }
+        #ui { position: absolute; top: 10px; left: 10px; color: white; text-shadow: 2px 2px 4px #000; pointer-events: none; }
+        #score { font-size: 24px; font-weight: bold; }
+
+        /* Style cho bảng câu hỏi Quiz */
+        #quiz-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none; /* Ẩn lúc đầu */
+            flex-direction: column; align-items: center; justify-content: center;
+            color: white; z-index: 10;
+        }
+        .quiz-box {
+            background: #fff; color: #333; padding: 30px; border-radius: 15px;
+            text-align: center; box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            max-width: 400px;
+        }
+        .answer-btn {
+            display: block; width: 100%; padding: 10px; margin: 10px 0;
+            background: #2ecc71; color: white; border: none; border-radius: 5px;
+            font-size: 18px; cursor: pointer; transition: background 0.2s;
+        }
+        .answer-btn:hover { background: #27ae60; }
+        .answer-btn.wrong { background: #e74c3c; }
+    </style>
+</head>
+<body>
+
+    <div id="ui">
+        <div>Windy Gm presents</div>
+        <div id="score">Vàng: 0</div>
+    </div>
+
+    <div id="quiz-overlay">
+        <div class="quiz-box">
+            <h2 style="color: #e74c3c">BẠN ĐÃ VA CHẠM!</h2>
+            <p id="question-text">Câu hỏi: 1 + 1 bằng mấy?</p>
+            <button class="answer-btn" onclick="checkAnswer(1)">A. 1</button>
+            <button class="answer-btn" onclick="checkAnswer(2)">B. 2 (Đúng)</button>
+            <button class="answer-btn" onclick="checkAnswer(3)">C. 3</button>
+            <p style="font-size: 12px; color: #777; margin-top: 15px;">Trả lời đúng để đi tiếp!</p>
+        </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Trạng thái game
+    let isGameOver = false;
+    let isQuizActive = false;
+    let score = 0;
+    let gameSpeed = 5;
+
+    // Nhân vật Mèo (đơn giản hóa thành hình vuông)
+    let cat = {
+        x: canvas.width / 2 - 25,
+        y: canvas.height - 150,
+        w: 50,
+        h: 80,
+        color: '#f1c40f', // Màu vàng
+        lane: 1 // 0: Trái, 1: Giữa, 2: Phải
+    };
+
+    const lanes = [
+        canvas.width / 2 - 150, // Trái
+        canvas.width / 2 - 25,  // Giữa
+        canvas.width / 2 + 100   // Phải
+    ];
+
+    // Vật cản và Vàng
+    let obstacles = [];
+    let golds = [];
+
+    // Danh sách câu hỏi (Bạn có thể thêm nhiều hơn)
+    const questions = [
+        { q: "Kênh YouTube của bạn tên là gì?", a: ["win d y G m", "Gaming TV", "Cả hai sai"], correct: 0 },
+        { q: "Thủ đô của Việt Nam là gì?", a: ["TP.HCM", "Đà Nẵng", "Hà Nội"], correct: 2 },
+        { q: "EvoWars là thể loại game gì?", a: ["Bắn súng", "IO / Tiến hóa", "Đua xe"], correct: 1 }
+    ];
+    let currentQuestionIndex = 0;
+
+    // Điều khiển
+    window.addEventListener('keydown', (e) => {
+        if (isGameOver || isQuizActive) return;
+        if (e.key === 'ArrowLeft' && cat.lane > 0) cat.lane--;
+        if (e.key === 'ArrowRight' && cat.lane < 2) cat.lane++;
+        cat.x = lanes[cat.lane];
+    });
+
+    function spawnObject() {
+        if (isGameOver ||
